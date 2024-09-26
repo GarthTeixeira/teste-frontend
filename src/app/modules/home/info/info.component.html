@@ -1,1 +1,7 @@
 <h1>Informações</h1>
+<hr>
+
+<div *ngFor="let item of infoMap; index as i;" class="field">
+    <div class="key">{{item.key}}: </div>
+    <div class="value">{{item | anonymized}} </div>
+</div>

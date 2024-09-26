@@ -4,6 +4,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { InfoComponent } from './info/info.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AnonymizedPipe } from "./info/pipe/anonymized.pipe";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    AnonymizedPipe
+]
 })
 export class HomeModule { }

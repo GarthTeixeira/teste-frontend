@@ -1,15 +1,42 @@
 <h1>Cadastro</h1>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
-    <label for="name">NOME:</label>
-    <input id="name" type="text" formControlName="name" placeholder="Digite seu nome">
-    
-    <div>
+    <div class="field">
+        <label for="name">NOME:</label>
+        <input id="name" type="text" formControlName="name" placeholder="Digite seu nome">
+        <div
+            *ngIf="f['name'].invalid && (f['name'].dirty || f['name'].touched)"
+            class="alert"
+            >
+            <div *ngIf="f['name'].errors?.['required']">Nome é obrigatório</div>
+        </div>
+    </div>
+
+    <div class ="field">
         <label for="email">EMAIL:</label>
-        <input id="email" type="text" formControlName="email" placeholder="Ex:carlos@uol.com.br" autocomplete="off">
-        <div *ngIf="f['email'].errors?.['invalidEmail']">Email inválido</div>
-        <div *ngIf="f['email'].errors?.['required']">Email é obrigatório</div>
-    </div>    
-    <label for="senha">SENHA:</label>
-    <input id="senha" type="password" formControlName="password" placeholder="Sua senha precisa ter pelo meonos 8 caracteres" autocomplete="new-password">    
-    <button type="submit">SALVAR</button>
+        <input 
+            id="email" type="text" formControlName="email" placeholder="Ex:carlos@uol.com.br" 
+            autocomplete="off">        
+        <div
+            *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)"
+            class="alert"
+            >
+            <div *ngIf="f['email'].errors?.['required']">Email é obrigatório</div>
+            <div *ngIf="f['email'].errors?.['invalidEmail']">Email inválido</div>
+        </div>
+    </div>
+    <div class="field">
+        <label for="senha">SENHA:</label>
+        <input 
+            id="senha" type="password" formControlName="senha" 
+            placeholder="Sua senha precisa ter pelo meonos 8 caracteres" autocomplete="new-password">
+        <div
+            *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)"
+            class="alert"
+            >
+            <div *ngIf="f['senha'].errors?.['required']">Email é obrigatório</div>
+            <div *ngIf="f['senha'].errors?.['invalidEmail']">Email inválido</div>
+        </div>
+
+    </div>
+    <button type="submit" [disabled]="!profileForm.valid" >SALVAR</button>
 </form>

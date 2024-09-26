@@ -17,9 +17,18 @@ input{
     height: 45px;
     font-size: 16px;
     padding: 0px 0px 0px 10px;
-    margin-bottom: 26px;
     max-width: 100%;
 }
+
+div.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+}
+
+.alert {
+    color: #da1125;
+  }
 
 button{
     align-self: center;
@@ -30,4 +39,12 @@ button{
     color: white;
     width: 135px;
     font-size: 16px;
+    cursor: pointer;
 }
+
+button[disabled] {
+    background-color: #cccccc; /* Cor de fundo para o estado desabilitado */
+    color: #666666; /* Cor do texto para o estado desabilitado */
+    cursor: not-allowed; /* Cursor alterado para indicar estado desabilitado */
+    opacity: 0.6; /* Opacidade reduzida */
+  }

@@ -1,0 +1,20 @@
+header{
+    background-color: #5e35b1;
+    height: 60px;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+}
+
+p{
+    color: white;
+}
+
+img {
+    height: 30px;
+    width: auto;
+}
